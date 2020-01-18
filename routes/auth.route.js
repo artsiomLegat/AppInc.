@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const bcrypt = require('bcryptjs');
-const config = require('/config/default');
+const config = require('/Webpack-Project1/default');
 const jwt = require('jsonwebtoken');
 const {check, validationResult} = require('express-validator');
 const router = Router();
