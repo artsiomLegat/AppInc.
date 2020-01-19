@@ -8,4 +8,5 @@ module.exports = {
     templatePath: path.resolve(__dirname,'../../frontEnd/src/index.html'),
     styleCssPath: path.resolve(__dirname,'../../frontEnd/src/styled/css/style.css'),
     styleSassPath: path.resolve(__dirname,'../../frontEnd/src/styled/sass/sassStyle.css.sass'),
+    themePath: path.resolve(__dirname,'../../frontEnd/src/styled/theme.sass'),
 };
