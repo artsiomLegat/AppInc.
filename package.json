@@ -31,6 +31,7 @@
     "postcss-nested": "^4.2.1",
     "postcss-strip-inline-comments": "^0.1.5",
     "terser-webpack-plugin": "^2.3.2",
+    "webpack": "^4.41.5",
     "webpack-bundle-analyzer": "^3.6.0"
   },
   "devDependencies": {
