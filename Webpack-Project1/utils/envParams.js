@@ -14,7 +14,7 @@ const someEnvCovert = () => {
 };
 const getParam = (param)=>{
     someEnvCovert();
-    return envParams.definition[`process.env.${param}`].slice(1).slice(0,-1);
+    return process.env[param] || false;
 };
 
 const getParamAsNumber = (param)=>(Number(getParam(param)));

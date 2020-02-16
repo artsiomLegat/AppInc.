@@ -1,6 +1,7 @@
 const path = require('path');
-const {sourcePath} = require('../utils/paths');
+const {sourcePath,rootPath} = require('../utils/paths');
 
 module.exports = {
-    app: [path.resolve(sourcePath,'app.js').filter(Boolean)],
+    app: ['webpack-hot-middleware/client?reload=true','@babel/polyfill','@babel/core',path.resolve(sourcePath,'index.tsx')],
+    // app: ['webpack-hot-middleware/client?reload=true',path.resolve(sourcePath,'index.tsx')],
 };

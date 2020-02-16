@@ -6,7 +6,7 @@
          plugins: () => [
              // https://github.com/postcss/postcss-import
              require('postcss-import')({
-                 path: [stylesPath],
+                 path: [styleCssPath],
              }),
 
              // https://github.com/mummybot/postcss-strip-inline-comments

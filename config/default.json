@@ -1,5 +1,5 @@
 {
-  "port": 5000,
+  "port": 8083,
   "jwtsecretKey": "4214ffd?2?#?2!?!?7)!!FdDD",
-  "mongoUri": "mongodb+srv://Archi:anton_1995450241@cluster0-h0liu.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://Archi:anton_19954502415@cluster0-h0liu.mongodb.net/test?retryWrites=true&w=majority"
 }

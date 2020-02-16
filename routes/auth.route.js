@@ -1,10 +1,10 @@
 const {Router} = require('express');
 const bcrypt = require('bcryptjs');
-const config = require('/Webpack-Project1/default');
+const config = require('config');
 const jwt = require('jsonwebtoken');
 const {check, validationResult} = require('express-validator');
 const router = Router();
-const User = require('/models/User');
+const User = require('../models/User');
 
 router.post('/register',
     [check('email','Некорректный email').isEmail(),

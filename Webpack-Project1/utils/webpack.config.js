@@ -2,8 +2,6 @@ const pluginHot = require('./plugins/pluginHot');
 const pluginHtml = require('./plugins/pluginHtml');
 const pluginClean = require('./plugins/pluginClean');
 const pluginDefine = require('./plugins/pluginDefine');
-const pluginForkTs = require('./plugins/pluginForkTs');
-const pluginForkTsNotifier = require('./plugins/pluginForkTsNotifier');
 const pluginExtract = require('./plugins/pluginExtract');
 const pluginAnalyzer = require('./plugins/pluginAnalyzer');
 const pluginSpeedMeasure = require('./plugins/pluginSpeedMeasure');
@@ -11,16 +9,10 @@ const pluginCircularDependency = require('./plugins/pluginCircularDependency');
 const webpack = require('webpack');
 const paths = require('./utils/paths');
 const {getParam, getParamAsBoolean, isProduction} = require('./utils/envParams');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const ruleSass = require('./rules/ruleSass');
-const ruleImage = require('./rules/ruleImages');
-const ruleTs = require('./rules/ruleTs');
-
 
 module.exports = {
     // mode: getParam('NODE_ENV'),
     mode: "development",
-
     // node: require('./config/configNode'),
     // stats: require('./config/configStats'),
     node: {fs: 'empty'},
@@ -28,42 +20,15 @@ module.exports = {
     output: require('./config/configOutput'),
     resolve: require('./config/configResolve'),
     devServer: require('./config/configDevServer'),
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     performance: require('./config/configPerfomance'),
     optimization: require('./config/configOptimization'),
-    module: {
-          rules: [
-              ruleTs,
-            {
-              test: /\.(js|jsx)$/,
-              exclude: /node_modules/,
-              use: {
-                loader: "babel-loader",
-                options: {
-                    "presets": ["@babel/preset-env", "@babel/preset-react"]
-                },
-              }
-            },
-            {
-              test: /\.html$/,
-              use: [
-                {
-                  loader: "html-loader"
-                }
-              ]
-            },
-            ruleSass,
-            ruleImage,
-          ],
-      },
     plugins: [
         pluginClean,
         pluginHtml,
         pluginDefine,
         pluginHot,
         pluginExtract,
-        pluginForkTs,
-        pluginForkTsNotifier,
         // pluginAnalyzer,
         pluginCircularDependency,
         // new webpack.optimize.OccurrenceOrderPlugin(),
@@ -75,7 +40,7 @@ module.exports = {
         // getParamAsBoolean('CSS_EXTRACT') && pluginExtract,
         // getParamAsBoolean('BUNDLE_ANALYZER') && pluginAnalyzer,
         // getParamAsBoolean('CIRCULAR_CHECK') && pluginCircularDependency,
-    ],
-    // module: require('./config/configModule'),
+    ].filter(Boolean),
+    module: require('./config/configModule'),
 
 };

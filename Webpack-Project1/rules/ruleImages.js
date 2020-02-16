@@ -1,7 +1,7 @@
-const {sourcePath} = require('../utils/paths');
-const loaderUrl = require('../loaders/loaderUrl');
+const {imagePath} = require('../utils/paths');
+const loaderStaticFiles = require('../loaders/loaderStaticFiles');
 module.exports = {
     test: /\.(png|jpg|gif)$/,
-    include: [sourcePath],
-    use:[loaderUrl],
+    // include: [imagePath],
+    use:[loaderStaticFiles],
 };
