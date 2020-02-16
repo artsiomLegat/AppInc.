@@ -1,45 +1,9 @@
-const TerserPlugin = require('terser-webpack-plugin');
+const ruleBabel = require('../rules/ruleBabel');
+const ruleSass = require('../rules/ruleSass');
+const ruleImage = require('../rules/ruleImages');
+const ruleSvgInline = require('../rules/ruleSvgInline');
+const ruleSassTheme = require('../rules/ruleSassTheme');
 
 module.exports = {
-    runtimeChunk: {
-        name: 'runtime',
-    },
-    chunkIds: 'named',
-    moduleIds: 'hased',
-    mergeDuplicateChunks: true,
-    splitChunks: {
-        cacheGroups: {
-            lodash: {
-                test: module=>module.context.indexOf('node_modules\\lodash') !== -1,
-                name: 'lodash',
-                chunks: 'all',
-                enforce: true,
-            },
-            sentry: {
-                test: module => module.context.indexOf('node_modules\\@sentry') !== -1,
-                name: 'sentry',
-                chunks: 'all',
-                enforce: true,
-            },
-            highcharts: {
-                test: module => module.context.indexOf('node_modules\\highcharts') !== -1,
-                name: 'highcharts',
-                chunks: 'all',
-                enforce: true,
-            },
-            vendor: {
-                test: module => module.context.indexOf('node_modules') !== -1,
-                priority: -1,
-                name: 'vendor',
-                chunks: 'all',
-                enforce: true,
-            },
-        },
-    },
-    minimizer: [new TerserPlugin({
-        terserOptions: {
-            keep_fnames: true,
-        },
-    }),
-    ],
-};
+    rules: [ruleBabel,ruleSassTheme,ruleImage,ruleSass,ruleSvgInline],
+}

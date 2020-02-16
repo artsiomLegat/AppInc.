@@ -5,7 +5,8 @@ const loaderBabel = require('../loaders/loaderBabel');
 const loaderThreadParallel = require('../loaders/loaderThreadParallel');
 
 module.exports = {
-    test: /\.jsx?$/,
+    test: /\.js?$/,
+    exclude: /node_modules/,
     include: [sourcePath],
     use: [loaderThreadParallel, loaderBabel],
 };
