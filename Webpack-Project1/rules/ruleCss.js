@@ -1,6 +1,7 @@
 const {styleCssPath} = require('../utils/paths');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const loaderExtractCss = require('../loaders/loaderExtractCss');
+const loaderCss = require('../loaders/loaderCss');
 
 module.exports = {
     test: /\.css$/,
@@ -8,11 +9,6 @@ module.exports = {
     use: [
         "style-loader",
        loaderExtractCss,
-        {
-            loader:"css-loader",
-            options: {
-                sourceMap:  true,
-            }
-        }
+       loaderCss,
     ],
 };

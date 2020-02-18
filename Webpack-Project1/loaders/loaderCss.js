@@ -1,9 +1,8 @@
 module.exports = {
-    loader: 'css-loader',
-    options: { sourceMap: true },
-    // options: {
-    //     importLoaders: 1,
-    //     modules: true,
-    //     localIdentName: '[folder]__[local]',
-    // },
-};
+    test: /\.css$/,
+    use: [
+        'style-loader',
+        'css-loader',
+    ],
+    exclude: /\.module\.css$/,
+}

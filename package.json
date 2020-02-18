@@ -5,10 +5,10 @@
   "main": "app.js",
   "scripts": {
     "build2": "nodemon app.js",
-    "build3": "cross-env NODE_ENV=development nodemon --watch Project1 --watch frontEnd --watch app.js app.js",
+    "build3": "--mode=development nodemon --watch Project1 --watch frontEnd --watch app.js app.js",
     "start": "webpack-dev-server --config=Webpack-Project1/webpack.config.js --progress",
-    "build": "cross-env NODE_ENV=development webpack --config=Webpack-Project1/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development webpack --config Webpack-Project1/webpack.config.js",
+    "build": "--mode=development webpack --config=Webpack-Project1/webpack.config.js",
+    "watch": "--mode=development webpack --config Webpack-Project1/webpack.config.js",
     "dev": "concurrently \"npm run build\" \"npm run build3\" --open"
   },
   "keywords": [
