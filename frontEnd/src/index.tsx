@@ -8,10 +8,8 @@ import React from "react";
 import ReactDOM from 'react-dom';
 
 const ImageTool: React.FC = ()=>(
-    <div>
+    <div className={'AppContainer'}>
         <Header/>
-    <h1>HOOhh</h1>
-       
     </div>
 // <div><h1>Hiworld</h1></div>
 );

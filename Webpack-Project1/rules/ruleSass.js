@@ -7,10 +7,11 @@ const {sourcePath,themePath} = require('../utils/paths');
 const {getParamAsBoolean} = require('../utils/envParams');
 
 module.exports = {
-    test: /\.s[ac]ss$/,
+    test: /\.scss$/,
     // include: [sourcePath],
     // exclude: [themePath],
     use: [
+        "style-loader",
         // !getParamAsBoolean('CSS_EXTRACT') && loaderStyle,
         // getParamAsBoolean('CSS_EXTRACT') && loaderExtractCss,
         // loaderStyle,
