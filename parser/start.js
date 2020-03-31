@@ -7,6 +7,6 @@ let pupp = new getHTMLinfo();
 (async function main(){
  let HTMLcontent = pupp.getHtmlInfo(URL);
  let $ = cheerio.load(HTMLcontent);
- let attrClass = $('.nav-fill').attr('class');
- console.log(attrClass);
+//  let attrClass = $('.nav-fill').attr('class');
+ console.log($('.nav-fill').attr('class'));
 })
