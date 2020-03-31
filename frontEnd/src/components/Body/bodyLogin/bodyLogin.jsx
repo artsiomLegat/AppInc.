@@ -1,8 +1,8 @@
 import React from 'react';
+import styleBodyLogin from './bodyLogin.module.scss'
 
 
-
-export const BodyContainer: React.FC = ()=>{
+export const BodyLogin= ()=>{
    return (
        <>
        <div>

@@ -10,17 +10,24 @@ const pluginSpeedMeasure = require('./plugins/pluginSpeedMeasure');
 const pluginCircularDependency = require('./plugins/pluginCircularDependency');
 const webpack = require('webpack');
 const paths = require('./utils/paths');
-const {getParam, getParamAsBoolean, isProduction} = require('./utils/envParams');
+const {getParam, isProduction} = require('./utils/envParams');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ruleSass = require('./rules/ruleSass');
 const ruleImage = require('./rules/ruleImages');
 const ruleTs = require('./rules/ruleTs');
+const loaderCss = require('./loaders/loaderCss');
+const loaderStyle = require('./loaders/loaderStyle');
+const loaderPostcss = require('./loaders/loaderPostcss');
+const loaderExtractCss = require('./loaders/loaderExtractCss');
+const loaderSass = require('./loaders/loaderSass');
+const {sourcePath,themePath} = require('./utils/paths');
+
+
 
 
 module.exports = {
     // mode: getParam('NODE_ENV'),
     mode: "development",
-
     // node: require('./config/configNode'),
     // stats: require('./config/configStats'),
     node: {fs: 'empty'},
@@ -52,8 +59,57 @@ module.exports = {
                 }
               ]
             },
-            ruleSass,
-            ruleImage,
+            // Разобраться с форматом module.scss и просто scss т.к у меня два обработчика
+              {
+              test: /\.scss$/,
+                // include: /node_modules/,
+                // include: [sourcePath],
+              // exclude: [themePath],
+              use: [
+                  "style-loader",
+                  // !getParamAsBoolean('CSS_EXTRACT') && loaderStyle,
+                  // getParamAsBoolean('CSS_EXTRACT') && loaderExtractCss,
+                  // loaderStyle,
+            
+                  // loaderCss,
+                  // loaderExtractCss,
+                  // loaderPostcss,
+            
+                  'css-loader',
+                  loaderSass
+              ],
+              exclude: /\.module\.scss$/,
+          }, 
+          {
+                  test: /\.module.scss$/,
+                  // include: /node_modules/,
+                  // include: [sourcePath],
+                  // exclude: [themePath],
+                  use: [
+              
+                    "style-loader",
+                  // !getParamAsBoolean('CSS_EXTRACT') && loaderStyle,
+                  // getParamAsBoolean('CSS_EXTRACT') && loaderExtractCss,
+                  // loaderStyle,
+            
+          
+                  // loaderExtractCss,
+                  loaderCss,
+                  // loaderPostcss,
+                  // loaderSass,
+                  // 'sass-loader'
+              
+                  ],
+                  // exclude: /\.module\.s[ac]ss$/,
+              },
+              {
+                  test: /\.css$/,
+                  use: [
+                      "style-loader",
+                     
+                      'css-loader'
+                  ],
+              },
           ],
       },
     plugins: [

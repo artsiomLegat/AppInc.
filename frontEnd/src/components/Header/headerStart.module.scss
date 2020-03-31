@@ -1,0 +1,8 @@
+.headerContainer{
+    align-items: center;
+    color:red;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    border: 2px solid black;
+};

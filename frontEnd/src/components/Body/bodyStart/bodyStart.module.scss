@@ -1,0 +1,48 @@
+.bodyContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+}
+.offersLinks{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.commentsContainer{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+.commentsContainerTitle{
+    display: grid;
+    justify-items: center;
+}
+.comment{
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-template-rows: 1fr;
+}
+.commentHeader{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.commentDate{
+  display: grid;
+  justify-items: start;
+  align-items: start;
+}
+.commentUser{
+    display: grid;
+    justify-items: end;
+    align-items: end;
+}
+.commentText{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.commentImages{
+    display: grid;
+    justify-items: center;
+}

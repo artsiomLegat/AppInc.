@@ -1,0 +1,43 @@
+.bodyContainer{
+    display: grid;
+    justify-items: start;
+    // align-items: center;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    // position: relative;
+    color: palevioletred;
+};
+.bodyItemAllRevies {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15px 1fr;
+}
+.bodyUserMoves {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 1fr;
+grid-row-gap: 20px;
+}
+.bodyReviewItem {
+    display: grid;
+}
+.categhoryLink{
+    display: inline;
+}
+.categhoryLink a:nth-child(1){
+    padding-bottom: 5px;
+}
+.leftCathegoriesContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+// .torun{
+//     border: none;
+//     height: auto;
+//     width: 2px;
+//     background: red;
+// }
+.LinkItems{
+    display: grid;
+}

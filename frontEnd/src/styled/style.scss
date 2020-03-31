@@ -4,17 +4,23 @@ $fontSize: 14px;
 $fontFamily: Regular, "Roboto Condensed", sans-serif;
 $fontLH: 120%;
 $mainColor: #000;
+
 html,
-body {
+body{
 width: 100%;
 height: 100%;
 font: #{$fontSize}/#{$fontLH} $fontFamily;
 color: $N0;
 background: $N100;
 };
-.AppContainer {
-    width: 900px;
+
+.App{
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    right: 15%;
     display: grid;
-    grid-template-columns: 850px;
-    grid-template-rows: 200px 600px 200px;
-};
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 200px;
+    background: rgb(211, 159, 68);
+}

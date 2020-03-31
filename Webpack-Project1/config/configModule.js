@@ -16,5 +16,5 @@ let isProd = !isDev;
 module.exports = {
     // ruleSass,
     // ruleSassTheme,
-    rules: [ruleImage,ruleSvgInline,ruleTs,ruleJs_x,rulesCss,ruleSass,ruleFonts,ruleHtml],
+    rules: [ruleImage,ruleSvgInline,ruleTs,ruleJs_x,ruleCss,ruleSass,ruleFonts,ruleHtml],
 };

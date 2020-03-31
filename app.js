@@ -35,11 +35,11 @@ app.use('/graphql',graphQlHTTP({
 
 async function start (){
     try {
-        await mongoose.connect("mongodb+srv://Archi:anton_1995450241@cluster0-h0liu.mongodb.net/cinemas?retryWrites=true&w=majority",{
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true,
-        });
+      await mongoose.connect("mongodb+srv://Archi:anton_1995450241@cluster0-h0liu.mongodb.net/cinemas?retryWrites=true&w=majority",{
+           useNewUrlParser: true,
+           useUnifiedTopology: true,
+           useCreateIndex: true,
+       });
         let server =  app.listen(0,()=>{console.log(`server has been started on port#${server.address().port}`)});
     } catch (e) {
         console.log(`Error from start server`,e.message);
