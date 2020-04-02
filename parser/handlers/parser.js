@@ -21,10 +21,15 @@ const PAGE_PUPPETEER_OPTS = {
 
  module.exports = class getHTMLinfo {
     constructor(){
-        this.browser = this.browser.bind(this,async ()=>(await poppeteer.launch(LAUNCH_PUPPETEER_OPTS))); 
+        this.browser = null;
+        this.initBrowser= this.initBrowser.bind(this);
     };
+    async initBrowser (){
+       this.browser = await poppeteer.launch(LAUNCH_PUPPETEER_OPTS);
+    }
    async getPageContent(url) {
        try{
+       await this.initBrowser();
         let page = await this.browser.newPage();
         await page.goto(url,PAGE_PUPPETEER_OPTS);
         let content = await page.content();
