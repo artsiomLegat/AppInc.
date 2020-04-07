@@ -6,8 +6,14 @@ const chalk = require('chalk');
 let pupp = new getHTMLinfo();
 //test
 (async function main(){
+    try {
         let HTMLcontent = await pupp.getPageContent(URL);
         let $ = cheerio.load(HTMLcontent);
-        let attrClass = $('.nav-fill').attr('class');
+        let attrClass = $('#hmenu-customer-profile').attr('id');
+       
         console.log(HTMLcontent);
-})()
+    } catch (e){
+        throw new Error(e.message)
+    }
+})();
+

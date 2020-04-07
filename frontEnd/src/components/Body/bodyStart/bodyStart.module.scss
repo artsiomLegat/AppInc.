@@ -8,13 +8,15 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 }
-.commentsContainer{
+.toDoContainer{
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
 }
-.commentsContainerTitle{
+.toDoContainerHeaderTitle{
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     justify-items: center;
 }
 .comment{
