@@ -4,17 +4,10 @@ const URL = 'https://www.amazon.com';
 const chalk = require('chalk');
 
 let pupp = new getHTMLinfo();
-
+//test
 (async function main(){
-    try{
         let HTMLcontent = await pupp.getPageContent(URL);
-        // let $ = cheerio.load(HTMLcontent);
-        // let attrClass = $('#hmenu-content').attr('id');
+        let $ = cheerio.load(HTMLcontent);
+        let attrClass = $('.nav-fill').attr('class');
         console.log(HTMLcontent);
-        // console.log(HTMLcontent);
-        // console.log($);выф
-    }
-     catch(e){
-         throw new Error(chalk.red(e.message));
-     }
 })()
