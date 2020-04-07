@@ -1,21 +1,28 @@
 import React from 'react';
 import BodyStartModule from './bodyStart.module.scss';
+import {ToDoList} from './toDoList/toDoList.jsx';
 
 export const BodyStart = () => {
     return (
      <div className={BodyStartModule.bodyContainer}>
             <div className={BodyStartModule.offersLinks}>
                 <div>
-                    Для дома
+                   Задания за всё время
+                   {/* 'сделать разбивку типо
+                    Вместо За всё время,
+                    сделать недавно , за последнюю неделю, 
+                    за последний месяц . И дальше пошло
+                   ' */}
                 </div>
                 <div>
-                    Авто и мото
+                    Задания за сегодня
+                    'Сегодня'
                 </div>
                 <div>
-                   Техника
+                    На следующие 7 дней
                 </div>
                 <div>
-                    Для дома
+                   Приоритеты
                 </div>
                 <div>
                     Авто и мото
@@ -24,27 +31,7 @@ export const BodyStart = () => {
                    Техника
                 </div>
             </div>
-            <div className={BodyStartModule.commentsContainer}>
-                <div className={BodyStartModule.commentsContainerTitle}>
-                commentns about this offer
-                </div>
-                <div className={BodyStartModule.comment}>
-                  <div className={BodyStartModule.commentHeader}>
-                    <div className={BodyStartModule.commentDate}>
-                        date
-                     </div>
-                    <div className={BodyStartModule.commentUser}>
-                        user
-                    </div>
-                  </div>
-                    <div className={BodyStartModule.commentText}>
-                        comment
-                    </div>
-                    <div className={BodyStartModule.commentImages}>
-                        comment-Images
-                    </div>
-                </div>
-            </div>
+           <ToDoList />
      </div>
     )
 }
