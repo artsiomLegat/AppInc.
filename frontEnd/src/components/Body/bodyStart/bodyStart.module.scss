@@ -1,3 +1,5 @@
+
+/* Почти во всех компанентах используется d-grid  и g-t-c 1fr 1fr и g-t-r 1fr 1fr */
 .bodyContainer {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -26,7 +28,7 @@
 }
 .taskContainer{
  display: grid;
- grid-template-columns: 25px 1fr;
+ grid-template-columns: 25px 1fr 65px;
  grid-template-rows: 1fr;
  border-top: 1px solid rgba(255,255,255,0.1);
  border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -83,6 +85,7 @@
     background-position: center;
 }
 .taskDate{
+  color: #ff7066 !important;
   display: grid;
   margin-top: 10px;
   justify-items: start;
@@ -95,11 +98,53 @@
 }
 .taskText{
     display: grid;
-    margin-right: 70px;
+    /*    margin-right: 70px;*/
     justify-items: center;
     align-items: center;
 }
 .commentImages{
     display: grid;
     justify-items: center;
+}
+.correctTaskElementContainer{
+    display: grid;
+    grid-template-columns: repeat(4,15px);
+    grid-template-rows: 1fr;
+    justify-content: center;
+}
+.correctTaskElementEdit{
+    display: grid;
+    width: 15px;
+    height: 15px;
+    background-image: url('../../../images/pen.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.correctTaskElementContainerTerm{
+    display: grid;
+    width: 15px;
+    height: 15px;
+    background-image: url('../../../images/object.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.correctTaskElementComment{
+    display: grid;
+    width: 15px;
+    height: 15px;
+    background-image: url('../../../images/comment.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.correctTaskElementMainEdit{
+   display: grid;
+   width: 15px;
+   height: 15px;
+   background-image: url('../../../images/dotsHorisontal.png');
+   background-size: 100%;
+   background-repeat: no-repeat;
+   background-position: center;
 }

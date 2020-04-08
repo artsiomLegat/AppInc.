@@ -40,6 +40,20 @@ export const ToDoLi = ()=>{
                 Дата:{`${new Date().getDate()},${new Date().getMonth()},${new Date().getHours()}`}
              </div>
             </div>
+            <div className={BodyStartModule.correctTaskElementContainer}>
+                <div  className={BodyStartModule.correctTaskElementEdit}>
+                 
+                </div>
+                <div  className={BodyStartModule.correctTaskElementContainerTerm}>
+                 
+                </div>
+                <div  className={BodyStartModule.correctTaskElementComment}>
+                 
+                </div>
+                <div  className={BodyStartModule.correctTaskElementMainEdit}>
+                
+                </div>
+            </div>
         </div>
         </div>
     );
