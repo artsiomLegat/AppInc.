@@ -19,18 +19,72 @@
     grid-template-rows: 1fr;
     justify-items: center;
 }
-.comment{
- display: grid;
- grid-template-columns: 1fr;
- grid-template-rows: 1fr;
+.mainTaskContainer{
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    grid-template-rows: 1fr;
 }
+.taskContainer{
+ display: grid;
+ grid-template-columns: 25px 1fr;
+ grid-template-rows: 1fr;
+ border-top: 1px solid rgba(255,255,255,0.1);
+ border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.completedTaskAndMoveTask{
+    display: grid;
+    grid-template-columns: 25px;
+    grid-template-rows: 1fr;
+};
+
+
 .commentHeader{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
-.commentDate{
+
+.completedTasks{
+    display: grid;
+    margin-top: 2px;
+    height: 18px;
+    width: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+.completedTasks:hover{
+    background-image: url('../../../images/tick.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: gray;
+    transition: background-image background-color 0.1s ease-in;
+}
+/* вынести на глобальную область т.к display grid почти везде нужен */
+
+.d_grid{
+    display: grid;
+}
+.dragNdrop{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.dragDropElem{
+    top: 5px;
+    display: grid;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: url('../../../images/fullscreens.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.taskDate{
   display: grid;
+  margin-top: 10px;
   justify-items: start;
   align-items: start;
 }
@@ -39,8 +93,9 @@
     justify-items: end;
     align-items: end;
 }
-.commentText{
+.taskText{
     display: grid;
+    margin-right: 70px;
     justify-items: center;
     align-items: center;
 }

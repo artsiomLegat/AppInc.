@@ -1,11 +1,12 @@
 import React from 'react';
 import BodyStartModule from './bodyStart.module.scss';
-import {ToDoList} from './toDoList/toDoList.jsx';
+import {ToDoListComponent} from './toDoLists/toDoListComponent.jsx';
 
 export const BodyStart = () => {
     return (
      <div className={BodyStartModule.bodyContainer}>
             <div className={BodyStartModule.offersLinks}>
+              <div>
                 <div>
                    Задания за всё время
                    {/* 'сделать разбивку типо
@@ -19,7 +20,7 @@ export const BodyStart = () => {
                     'Сегодня'
                 </div>
                 <div>
-                    На следующие 7 дней
+                    На следующие 7 jдней
                 </div>
                 <div>
                    Приоритеты
@@ -30,8 +31,9 @@ export const BodyStart = () => {
                 <div>
                    Техника
                 </div>
+              </div>
             </div>
-           <ToDoList />
+           <ToDoListComponent />
      </div>
     )
 }

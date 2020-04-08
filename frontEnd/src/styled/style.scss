@@ -2,7 +2,7 @@
 
 $fontSize: 14px;
 $fontFamily: Regular, "Roboto Condensed", sans-serif;
-$fontLH: 120%;
+$fontLH: 130%;
 $mainColor: #000;
 
 html,
@@ -16,11 +16,12 @@ background: $N100;
 
 .App{
     position: absolute;
+    color: rgba(255,255,255,0.87);
     width: 70%;
     left: 15%;
     right: 15%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 1fr 200px;
-    background: rgb(211, 159, 68);
+    background: #1e1e1e;
 }
