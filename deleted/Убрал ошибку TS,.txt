@@ -1,0 +1,36 @@
+Убрал проверку ts
+Как вернуть проверку Typescript:
+packaje-lock.json - убрал я
+
+  "ts-invariant": {
+      "version": "0.4.4",
+      "resolved": "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.4.4.tgz",
+      "integrity": "sha512-uEtWkFM/sdZvRNNDL3Ehu4WVpwaulhwQszV8mrtcdeE8nN00BV9mAmQ88RkrBhFgl9gMgvjJLAQcZbnPXI9mlA==",
+      "requires": {
+        "tslib": "^1.9.3"
+      }
+    },
+    "ts-loader": {
+      "version": "6.2.1",
+      "resolved": "https://registry.npmjs.org/ts-loader/-/ts-loader-6.2.1.tgz",
+      "integrity": "sha512-Dd9FekWuABGgjE1g0TlQJ+4dFUfYGbYcs52/HQObE0ZmUNjQlmLAS7xXsSzy23AMaMwipsx5sNHvoEpT2CZq1g==",
+      "requires": {
+        "chalk": "^2.3.0",
+        "enhanced-resolve": "^4.0.0",
+        "loader-utils": "^1.0.2",
+        "micromatch": "^4.0.0",
+        "semver": "^6.0.0"
+      },
+
+
+
+packaje.json убрал - 
+
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+
+
+удалил из корня проекта tsconfig.json вроде json мб js
+и убрал из webpack.config.js из plugins 
+   //       pluginForkTs,
+        // pluginForkTsNotifier,
