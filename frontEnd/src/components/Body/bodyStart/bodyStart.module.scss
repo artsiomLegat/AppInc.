@@ -15,23 +15,94 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
 }
+.addTaskSection{
+ display: grid;
+ cursor: pointer;
+ grid-template: 1fr / 18px 140px;
+ margin: 5px 0px 0px 25px;
+}
+
+.addTaskSection:hover > :first-child > * {
+    background-color: black;
+  }
+.addTaskSection:hover > :first-child {
+    background-color: #ff7066;
+}
+.addTaskSection:hover > :last-child {
+    color: #ff7066;
+}
+
+
+.buttonPlus{
+    position: relative;
+  /*   background-color: #ff7066; */
+    border-radius: 50%;
+}
+.buttonElemHorizontal{
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 1px;
+    height: 14px;
+    background-color: #ff7066;
+}
+.buttonElemVertical{
+    position: absolute;
+    top: 9px;
+    left: 2px;
+    width: 14px;
+    height: 1px;
+    background-color: #ff7066;
+}
+.buttonText{
+   color: rgba(255,255,255,0.87);
+   display: grid;
+   margin-left: 20px;
+}
 .toDoContainerHeaderTitle{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     justify-items: center;
 }
+
 .mainTaskContainer{
     display: grid;
     grid-template-columns: 25px 1fr;
     grid-template-rows: 1fr;
 }
+/*
+.mainTaskContainer{
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    grid-template-rows: 1fr;
+}
+*/
+.sectionToday{
+    display: grid;
+    margin-top: 20px;
+    grid-template: 1fr 1fr / 1fr;
+}
+.sectionHeader{
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+    margin-left: 25px;
+    font-size: 19px;
+    margin-left: 25px;
+}
+.sectionSubHeader{
+    display: grid;
+    margin: 20px 0px 5px 25px;
+}
+.sectionSort {
+    display: grid;
+    grid-template: 25px / 1fr 1fr;
+}
 .taskContainer{
  display: grid;
- grid-template-columns: 25px 1fr 65px;
+ margin: 10px 10px 10px 0px;
+ grid-template-columns: 25px 1fr 100px;
  grid-template-rows: 1fr;
- border-top: 1px solid rgba(255,255,255,0.1);
- border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .completedTaskAndMoveTask{
     display: grid;
@@ -51,7 +122,7 @@
     margin-top: 2px;
     height: 18px;
     width: 18px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid #787878;
     border-radius: 50%;
 }
 .completedTasks:hover{
@@ -63,7 +134,11 @@
     transition: background-image background-color 0.1s ease-in;
 }
 /* вынести на глобальную область т.к display grid почти везде нужен */
-
+.withBorder {
+    display: grid;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
 .d_grid{
     display: grid;
 }
@@ -75,14 +150,20 @@
 }
 .dragDropElem{
     top: 5px;
+    visibility: hidden;
     display: grid;
     position: absolute;
+    opacity: 0.7;
     width: 15px;
     height: 15px;
     background-image: url('../../../images/fullscreens.png');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+}
+.dragDropElem:hover{
+   opacity: 1;
+   cursor: pointer;
 }
 .taskDate{
   color: #ff7066 !important;
@@ -97,6 +178,7 @@
     align-items: end;
 }
 .taskText{
+    word-break: break-all;
     display: grid;
     /*    margin-right: 70px;*/
     justify-items: center;
@@ -106,45 +188,75 @@
     display: grid;
     justify-items: center;
 }
+.correctTaskElementWrapper{
+    width: 20px;
+    height: 20px;
+    display: grid;
+}
+.correctTaskElementWrapper:hover{
+    background-color:rgba(255,255,255,0.2) ;
+    display: grid;
+    border-radius: 20%;
+   }
 .correctTaskElementContainer{
     display: grid;
     grid-template-columns: repeat(4,15px);
+    visibility: hidden;
     grid-template-rows: 1fr;
+    grid-column-gap: 8px;
     justify-content: center;
 }
 .correctTaskElementEdit{
+    margin: 2px 2px 2px 2px;
     display: grid;
     width: 15px;
     height: 15px;
     background-image: url('../../../images/pen.png');
-    background-size: 100%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .correctTaskElementContainerTerm{
+    margin: 2px 2px 2px 2px;
     display: grid;
     width: 15px;
     height: 15px;
     background-image: url('../../../images/object.png');
-    background-size: 100%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .correctTaskElementComment{
+    margin: 2px 2px 2px 2px;
     display: grid;
     width: 15px;
     height: 15px;
     background-image: url('../../../images/comment.png');
-    background-size: 100%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .correctTaskElementMainEdit{
+    margin: 2px 2px 2px 2px;
    display: grid;
    width: 15px;
    height: 15px;
    background-image: url('../../../images/dotsHorisontal.png');
-   background-size: 100%;
+   background-size: 70%;
    background-repeat: no-repeat;
    background-position: center;
 }
+/*    
+.correctTaskElementEdit:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+.correctTaskElementContainerTerm:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+.correctTaskElementComment:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+.correctTaskElementMainEdit:hover{
+  background-color: rgba(255,255,255,0.1);
+}
+*/
